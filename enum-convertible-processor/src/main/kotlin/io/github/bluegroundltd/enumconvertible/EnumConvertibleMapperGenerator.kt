@@ -64,13 +64,13 @@ class EnumConvertibleMapperGenerator(
         defaultValueName: String?
     ): String {
         val defaultValuePart = buildDefaultValuePart(defaultValueName = defaultValueName)
-        return "return $className.values().find { it.$keyName.equals($keyName, ignoreCase = true) } $defaultValuePart"
+        return "return $className.values().find { it.$keyName.equals($keyName,ignoreCase = true) }$defaultValuePart"
     }
 
     private fun buildDefaultValuePart(
         defaultValueName: String?
     ): String = if (defaultValueName != null) {
-        "?: $defaultValueName"
+        " ?: $defaultValueName"
     } else {
         ""
     }

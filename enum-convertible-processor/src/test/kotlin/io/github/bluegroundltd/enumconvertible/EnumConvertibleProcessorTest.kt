@@ -2,8 +2,11 @@ package io.github.bluegroundltd.enumconvertible
 
 import com.google.common.truth.Truth.assertThat
 import com.squareup.kotlinpoet.ksp.KotlinPoetKspPreview
-import com.tschuchort.compiletesting.*
+import com.tschuchort.compiletesting.KotlinCompilation
+import com.tschuchort.compiletesting.SourceFile
 import com.tschuchort.compiletesting.SourceFile.Companion.kotlin
+import com.tschuchort.compiletesting.kspWithCompilation
+import com.tschuchort.compiletesting.symbolProcessorProviders
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TemporaryFolder
@@ -52,15 +55,15 @@ class EnumConvertibleProcessorTest {
         assertThat(result.exitCode).isEqualTo(KotlinCompilation.ExitCode.OK)
         val expectedSource = """
                     package `enum`
-                    
+
                     import kotlin.String
-                    
+
                     public object BGEnumMapper {
-                      public fun fromValue(`value`: String?): BGEnum? = BGEnum.values().find { it.value.equals(value,
-                          ignoreCase = true) } 
+                      public fun fromValue(`value`: String?): BGEnum? = BGEnum.values().find {
+                          it.value.equals(value,ignoreCase = true) }
                     }
-                    
-                """.trimIndent()
+
+        """.trimIndent()
         assertThat(generatedContent).isEqualTo(expectedSource)
     }
 
@@ -79,7 +82,7 @@ class EnumConvertibleProcessorTest {
                     enum class $enumName(@EnumConvertibleKey val `value`: String) {
 
                         FIRST_VALUE(`value` = "first"),
-    
+
                         @DefaultEnumConvertible
                         SECOND_VALUE(`value` = "second");
                     }
@@ -94,15 +97,15 @@ class EnumConvertibleProcessorTest {
         assertThat(result.exitCode).isEqualTo(KotlinCompilation.ExitCode.OK)
         val expectedSource = """
                   package `enum`
-                  
+
                   import `enum`.BGEnum.SECOND_VALUE
                   import kotlin.String
-                  
+
                   public object BGEnumMapper {
-                    public fun fromValue(`value`: String?): BGEnum = BGEnum.values().find { it.value.equals(value,
-                        ignoreCase = true) } ?: SECOND_VALUE
+                    public fun fromValue(`value`: String?): BGEnum = BGEnum.values().find {
+                        it.value.equals(value,ignoreCase = true) } ?: SECOND_VALUE
                   }
-                  
+
         """.trimIndent()
         assertThat(generatedContent).isEqualTo(expectedSource)
     }
