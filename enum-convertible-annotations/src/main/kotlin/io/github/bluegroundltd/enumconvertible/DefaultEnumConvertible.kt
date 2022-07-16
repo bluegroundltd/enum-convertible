@@ -1,4 +1,4 @@
-package com.theblueground.enumconvertible
+package io.github.bluegroundltd.enumconvertible
 
 /**
  * Defines that an enum entry of an enum class (which is annotated with [EnumConvertible]) that can

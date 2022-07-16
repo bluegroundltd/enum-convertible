@@ -1,4 +1,4 @@
-package com.theblueground.enumconvertible
+package io.github.bluegroundltd.enumconvertible
 
 import com.google.devtools.ksp.symbol.*
 import com.squareup.kotlinpoet.ksp.KotlinPoetKspPreview

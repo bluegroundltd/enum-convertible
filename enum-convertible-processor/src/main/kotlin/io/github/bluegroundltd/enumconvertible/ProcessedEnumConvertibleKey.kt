@@ -1,4 +1,4 @@
-package com.theblueground.enumconvertible
+package io.github.bluegroundltd.enumconvertible
 
 import com.squareup.kotlinpoet.TypeName
 

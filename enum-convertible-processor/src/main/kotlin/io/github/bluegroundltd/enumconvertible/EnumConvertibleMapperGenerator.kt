@@ -1,4 +1,4 @@
-package com.theblueground.enumconvertible
+package io.github.bluegroundltd.enumconvertible
 
 import com.google.devtools.ksp.processing.CodeGenerator
 import com.squareup.kotlinpoet.FileSpec

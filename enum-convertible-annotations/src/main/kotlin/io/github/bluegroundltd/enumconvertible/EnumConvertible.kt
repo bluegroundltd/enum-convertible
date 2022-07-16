@@ -1,4 +1,4 @@
-package com.theblueground.enumconvertible
+package io.github.bluegroundltd.enumconvertible
 
 /**
  * Defines an enum class from which we can generate a mapper to make conversions from plain values

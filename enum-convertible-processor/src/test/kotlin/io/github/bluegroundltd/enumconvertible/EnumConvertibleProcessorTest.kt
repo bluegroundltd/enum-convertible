@@ -1,4 +1,4 @@
-package com.theblueground.enumconvertible
+package io.github.bluegroundltd.enumconvertible
 
 import com.google.common.truth.Truth.assertThat
 import com.squareup.kotlinpoet.ksp.KotlinPoetKspPreview
@@ -30,9 +30,9 @@ class EnumConvertibleProcessorTest {
         val enumName = "BGEnum"
         val enumSource = """
                     package `enum`
-                    
-                    import com.theblueground.enumconvertible.EnumConvertible
-                    import com.theblueground.enumconvertible.EnumConvertibleKey
+
+                    import io.github.bluegroundltd.enumconvertible.EnumConvertible
+                    import io.github.bluegroundltd.enumconvertible.EnumConvertibleKey
 
                     @EnumConvertible
                     enum class $enumName(@EnumConvertibleKey val `value`: String) {
@@ -70,10 +70,10 @@ class EnumConvertibleProcessorTest {
         val enumName = "BGEnum"
         val enumSource = """
                     package `enum`
-                    
-                    import com.theblueground.enumconvertible.EnumConvertible
-                    import com.theblueground.enumconvertible.EnumConvertibleKey
-                    import com.theblueground.enumconvertible.DefaultEnumConvertible
+
+                    import io.github.bluegroundltd.enumconvertible.EnumConvertible
+                    import io.github.bluegroundltd.enumconvertible.EnumConvertibleKey
+                    import io.github.bluegroundltd.enumconvertible.DefaultEnumConvertible
 
                     @EnumConvertible
                     enum class $enumName(@EnumConvertibleKey val `value`: String) {
