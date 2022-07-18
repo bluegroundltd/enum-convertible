@@ -59,8 +59,8 @@ class EnumConvertibleProcessorTest {
                     import kotlin.String
 
                     public object BGEnumMapper {
-                      public fun fromValue(`value`: String?): BGEnum? = BGEnum.values().find {
-                          it.value.equals(value,ignoreCase = true) }
+                      public fun fromValue(`value`: String?): BGEnum? = BGEnum.values()
+                          .find { it.value.equals(value,ignoreCase = true) }
                     }
 
         """.trimIndent()
@@ -102,8 +102,9 @@ class EnumConvertibleProcessorTest {
                   import kotlin.String
 
                   public object BGEnumMapper {
-                    public fun fromValue(`value`: String?): BGEnum = BGEnum.values().find {
-                        it.value.equals(value,ignoreCase = true) } ?: SECOND_VALUE
+                    public fun fromValue(`value`: String?): BGEnum = BGEnum.values()
+                        .find { it.value.equals(value,ignoreCase = true) }
+                        ?: SECOND_VALUE
                   }
 
         """.trimIndent()
