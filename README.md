@@ -12,7 +12,8 @@ When using enums, it is pretty common to have conversions from primitive values 
 Before using this library, we must set up KSP in our project. We can follow the instructions [here](https://kotlinlang.org/docs/ksp-quickstart.html#use-your-own-processor-in-a-project). Then we must include the following dependency:
 
 ``` 
-implementation()
+implementation("io.github.bluegroundltd:enum-convertible-annotations:1.0.2")
+implementation("io.github.bluegroundltd:enum-convertible:1.0.2")
 ```
 
 ## How to
