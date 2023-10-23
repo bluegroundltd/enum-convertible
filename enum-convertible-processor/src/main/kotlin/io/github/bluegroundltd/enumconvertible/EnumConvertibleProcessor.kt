@@ -7,15 +7,12 @@ import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.symbol.KSAnnotated
 import com.google.devtools.ksp.symbol.KSClassDeclaration
 import com.google.devtools.ksp.validate
-import com.squareup.kotlinpoet.ksp.KotlinPoetKspPreview
-
 /**
  * Responsible for processing all enums that were annotated with the [EnumConvertible] annotation
  * and building the corresponding mappers. It will use an [EnumConvertibleVisitor] to extract the
  * necessary values from the enum class declaration and then will use an
  * [EnumConvertibleMapperGenerator] to generate the mappers.
  */
-@KotlinPoetKspPreview
 class EnumConvertibleProcessor(
     codeGenerator: CodeGenerator,
     private val logger: KSPLogger

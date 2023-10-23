@@ -1,7 +1,6 @@
 package io.github.bluegroundltd.enumconvertible
 
 import com.google.common.truth.Truth.assertThat
-import com.squareup.kotlinpoet.ksp.KotlinPoetKspPreview
 import com.tschuchort.compiletesting.KotlinCompilation
 import com.tschuchort.compiletesting.SourceFile
 import com.tschuchort.compiletesting.SourceFile.Companion.kotlin
@@ -12,7 +11,6 @@ import org.junit.Test
 import org.junit.rules.TemporaryFolder
 import java.io.File
 
-@KotlinPoetKspPreview
 class EnumConvertibleProcessorTest {
 
     private val generatedSourcesPath = "ksp/sources/kotlin/enum"

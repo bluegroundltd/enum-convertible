@@ -12,8 +12,8 @@ buildscript {
 
     dependencies {
         classpath(kotlin("gradle-plugin", version = "1.6.10"))
-        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.5.31")
-        classpath("com.vanniktech:gradle-maven-publish-plugin:0.18.0")
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.9.10")
+        classpath("com.vanniktech:gradle-maven-publish-plugin:0.25.3")
     }
 }
 
@@ -36,8 +36,6 @@ subprojects {
 
     tasks.withType<KotlinCompile>().configureEach {
         dependsOn("spotlessKotlinApply")
-        sourceCompatibility = projectJvmTarget
-        targetCompatibility = projectJvmTarget
 
         kotlinOptions {
             jvmTarget = projectJvmTarget
