@@ -5,7 +5,6 @@ import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.TypeName
 import com.squareup.kotlinpoet.TypeSpec
-import com.squareup.kotlinpoet.ksp.KotlinPoetKspPreview
 import com.squareup.kotlinpoet.ksp.addOriginatingKSFile
 import com.squareup.kotlinpoet.ksp.writeTo
 
@@ -14,7 +13,6 @@ import com.squareup.kotlinpoet.ksp.writeTo
  * annotated the [EnumConvertible] annotation. This class will use the [ProcessedEnumConvertible]s
  * that were produced from the [EnumConvertibleVisitor].
  */
-@KotlinPoetKspPreview
 class EnumConvertibleMapperGenerator(
     private val codeGenerator: CodeGenerator
 ) {
