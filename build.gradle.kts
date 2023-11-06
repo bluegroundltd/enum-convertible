@@ -11,14 +11,14 @@ buildscript {
     }
 
     dependencies {
-        classpath(kotlin("gradle-plugin", version = "1.6.10"))
+        classpath(kotlin("gradle-plugin", version = "1.9.10"))
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.9.10")
         classpath("com.vanniktech:gradle-maven-publish-plugin:0.25.3")
     }
 }
 
 plugins {
-    kotlin("jvm") version "1.6.10" apply false
+    kotlin("jvm") version "1.9.10" apply false
     id("com.diffplug.spotless")
 }
 
@@ -29,7 +29,7 @@ allprojects {
     }
 }
 
-val projectJvmTarget = JavaVersion.VERSION_11.toString()
+val projectJvmTarget = JavaVersion.VERSION_17.toString()
 
 subprojects {
     pluginManager.configureSpotlessIntegration(subProject = project)
@@ -39,7 +39,7 @@ subprojects {
 
         kotlinOptions {
             jvmTarget = projectJvmTarget
-            languageVersion = "1.6"
+            languageVersion = "1.9"
         }
     }
 }

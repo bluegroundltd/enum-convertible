@@ -36,5 +36,5 @@ package io.github.bluegroundltd.enumconvertible
  * As we can see, the naming convention for the generated functions is the the `from` prefix with
  * the name of the key. So, for the key `rawValue` the `fromRawValue` will be generated.
  */
-@Target(AnnotationTarget.FIELD)
+@Target(AnnotationTarget.VALUE_PARAMETER)
 annotation class EnumConvertibleKey
